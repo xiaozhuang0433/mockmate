@@ -1,0 +1,128 @@
+{
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/user/:id",
+      "status_code": 200,
+      "response": {
+        "code": 0,
+        "message": "success",
+        "data": {
+          "id": 1,
+          "name": "张三",
+          "email": "zhangsan@example.com",
+          "age": 18,
+          "department": "技术部"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/login",
+      "status_code": 200,
+      "response": {
+        "code": 0,
+        "message": "登录成功",
+        "data": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
+          "user_id": 1001,
+          "username": "admin"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/users",
+      "status_code": 200,
+      "response": {
+        "code": 0,
+        "message": "success",
+        "data": {
+          "total": 100,
+          "page": 1,
+          "page_size": 10,
+          "list": [
+            {
+              "id": 1,
+              "name": "张三",
+              "email": "zhangsan@example.com"
+            },
+            {
+              "id": 2,
+              "name": "李四",
+              "email": "lisi@example.com"
+            },
+            {
+              "id": 3,
+              "name": "王五",
+              "email": "wangwu@example.com"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/user",
+      "status_code": 201,
+      "response": {
+        "code": 0,
+        "message": "创建成功",
+        "data": {
+          "id": 1001,
+          "created_at": "2024-01-01T12:00:00Z"
+        }
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/user/:id",
+      "status_code": 200,
+      "response": {
+        "code": 0,
+        "message": "更新成功"
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/user/:id",
+      "status_code": 200,
+      "response": {
+        "code": 0,
+        "message": "删除成功"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/slow",
+      "status_code": 200,
+      "delay": 2000,
+      "response": {
+        "code": 0,
+        "message": "这是一个延迟2秒的接口"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/error",
+      "status_code": 500,
+      "response": {
+        "code": 500,
+        "message": "服务器内部错误"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/custom-headers",
+      "status_code": 200,
+      "headers": {
+        "X-Custom-Header": "custom-value",
+        "X-Request-ID": "12345"
+      },
+      "response": {
+        "code": 0,
+        "message": "带自定义响应头的接口"
+      }
+    }
+  ]
+}

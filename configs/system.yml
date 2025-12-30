@@ -1,0 +1,15 @@
+# Mock 服务系统配置
+# 服务监听端口，默认 8080
+port: 9090
+
+# Gin 运行模式
+# debug - 调试模式，输出详细日志
+# release - 生产模式，简洁日志（推荐生产环境）
+# test - 测试模式
+mode: release
+
+# 日志级别：debug | info | warn | error
+log_level: info
+
+# 是否启用热加载（修改配置文件后自动重载，无需重启）
+hot_reload: true
